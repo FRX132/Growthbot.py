@@ -1,0 +1,9 @@
+growthbot/
+│
+├── main.py                # Hauptsteuerung
+├── config.py              # Parameter & Einstellungen
+├── signal_logic.py        # Trading-Setup-Erkennung
+├── notifier.py            # Telegram oder App Push
+├── trade_log.csv          # Logfile deiner Signale & Entscheidungen
+├── data/                  # Preisfeed oder Datenquellen
+└── utils/                 # Hilfsfunktionen (z. B. Lotrechner)

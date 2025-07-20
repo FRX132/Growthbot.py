@@ -2,9 +2,9 @@ import requests
 from config import TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
 
 def send_telegram_alert(message, image_path=None):
-    url = f"https://api.telegram.org/bot{}/sendMessage"
+    url = f"https://api.telegram.org/bot{7630113729:AAHp9RzzOPsgX56UcSkuHqx_2LB_habpCHQ}/sendMessage"
     data = {
-        "chat_id": TELEGRAM_CHAT_ID,
+        "chat_id": ,
         "text": message
     }
     requests.post(url, data=data)

@@ -7,13 +7,39 @@ from growth_model import calc_target_balance, calc_lot_size
 import time
 from chart_generator import generate_chart
 from datetime import datetime
+from send_signal import send_trade_signal
+
+from signal import create_signal
+from send_signal import send_trade_signal
+#######################################################################
+
+# Beispiel-Signal erstellen
+
+signal = create_signal(
+    symbol="XAUUSD",
+    direction="BUY",
+    entry=2335.25,
+    sl=2330.00,
+    tp=2345.00,
+    lotsize=0.25,
+    category="Asian Sweep"
+)
+
+send_trade_signal(signal)
+
+##########################################################################################
 
 x = 0  # Trade-Zähler
-start_balance = 100
-growth_rate = 1.05
-risk_percent = 3.0
-sl_usd = 3.0
+start_balance = 100 # Startkapital in Euro
+growth_rate = 1.05 # Wachstum pro Trade (5%)
+risk_percent = 3.0 # Risiko pro Trade in Prozent
+sl_usd = 3.0 # Stop-Loss in USD
 
+
+###########################################################################################
+# Haupt-Loop für die Signalverarbeitung
+from datetime import datetime
+import time
 def main_loop():
     global x
     while x < 200:

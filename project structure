@@ -1,9 +1,48 @@
-growthbot/
-│
-├── main.py                # Hauptsteuerung
-├── config.py              # Parameter & Einstellungen
-├── signal_logic.py        # Trading-Setup-Erkennung
-├── notifier.py            # Telegram oder App Push
-├── trade_log.csv          # Logfile deiner Signale & Entscheidungen
-├── data/                  # Preisfeed oder Datenquellen
-└── utils/                 # Hilfsfunktionen (z. B. Lotrechner)
+# 📦 Projektstruktur: Telegram Trade Bridge
+
+## 🖥️ MacBook – Signal-Sender (Growthbot.py)
+
+Pfad: `/Users/_freakzy_/Desktop/Growthbot.py/`
+
+```
+Growthbot.py/
+├── main.py               # Hauptlogik deines Growthbots (Entry-Finder etc.)
+├── send_signal.py        # Sendet fertiges Signal an Telegram (anstelle von MT5-Ausführung)
+```
+
+- `main.py` ruft `send_signal.send_trade_signal(signal)` auf, sobald ein Entry validiert ist.
+
+
+## 💻 Windows/VPS – Signal-Empfänger & MT5-Executor
+
+Pfad: `C:\TelegramTradeBot\`
+
+```
+TelegramTradeBot/        # Projektordner auf Windows-System mit MT5
+├── receiver_bot.py      # Telegram-Bot, der Nachrichten empfängt
+├── executor.py          # Führt Trades in MetaTrader 5 aus
+```
+
+### 🔁 Ablauf:
+1. `main.py` sendet Signal (mit Entry, SL, TP, Lot, Kategorie, Symbol, Richtung).
+2. `receiver_bot.py` empfängt das JSON via Telegram.
+3. `executor.py` interpretiert das Signal und sendet es an MT5.
+
+---
+
+## 📦 Optional (für später):
+
+```
+TelegramTradeBot/
+├── config.py             # Enthält Bot-Token, Chat-ID, Risk-Einstellungen etc.
+├── logs/                 # Logs der ausgeführten Trades
+├── run_bot.bat           # Startskript für Windows-Autostart
+```
+
+Diese Struktur ist skalierbar für spätere Features wie:
+- Trade-Historie
+- SL/TP-Management
+- Telegram-Bestätigung
+- Webinterface zur Kontrolle
+
+Möchtest du auch ein Template für `config.py` und ein `run_bot.bat` Autostart-Skript?

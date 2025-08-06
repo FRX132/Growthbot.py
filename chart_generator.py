@@ -1,5 +1,9 @@
 import matplotlib.pyplot as plt
-import os
+from datetime import datetime
+
+filename = f"trade_signal_chart_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+plt.savefig(filename)
+
 
 def generate_chart(symbol, entry, sl, tp, direction, current_price, category):
     plt.figure(figsize=(6, 4))

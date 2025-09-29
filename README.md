@@ -1,5 +1,5 @@
 Expotential Trading Bot 
-ocused on XAUUSD,BTCUSD, GBPJPY
+focused on XAUUSD,BTCUSD, GBPJPY
 built with a Signalprovider, Trading Logic & Notifier 
 
 

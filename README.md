@@ -5,4 +5,4 @@ built with a Signalprovider, Trading Logic & Notifier
 
 Tradinglogic: 
 Analyse Asian Sweep and cobine 
-BOS (Break of Structure ) & SMT Divergence (Smart Money Trading ) Conecept.
+BOS (Break of Structure ) & SMT Divergence (Smart Money Trading ) Concept.
